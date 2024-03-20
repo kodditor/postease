@@ -1,10 +1,11 @@
 import "~/styles/globals.css";
 
-import { Work_Sans } from "next/font/google";
+import { Work_Sans as FontSans } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import { cn } from "~/lib/utils";
 
-const workSans = Work_Sans({
+export const fontSans = FontSans({
   weight: ['100','200', '300', '400', '700', '900'],
   subsets: ['latin'],
   variable: "--font-sans"
@@ -23,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${workSans.variable}`}>
+      <body className={ cn("font-sans ", fontSans.variable )}>
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>
