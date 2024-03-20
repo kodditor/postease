@@ -22,9 +22,9 @@ export default function Header(){
                             <div className="font-light" >Curators</div>
                         </Link>
                     </div>
-                    <div className="w-fit h-full">
+                    <a href="https://getwaitlist.com/waitlist/14764" className="w-fit h-full">
                         <Button>Join the waitlist</Button>
-                    </div>
+                    </a>
                 </div>
             </div>
         </nav>

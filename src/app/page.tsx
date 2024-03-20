@@ -17,9 +17,9 @@ export default async function Home() {
 			<section className="flex flex-col gap-3 pt-20 px-8 pb-16 items-center">
 				<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl lg:max-w-[60rem] mb-4 lg:mb-6 leading-snug sm:leading-normal md:leading-normal lg:leading-normal text-blue font-semibold text-center">The CMS for people who <span className="bg-accentBlue text-nowrap rounded-lg pb-2 pt-1 border-2 border-paleBlue px-4">get things done.</span></h1>
 				<h4 className=" text-xl md:text-2xl text-center font-medium mb-4">Skip the fluff, focus on the content</h4>
-				<div>
+				<a href="https://getwaitlist.com/waitlist/14764" target="_blank">
 					<Button>Join the waitlist</Button>
-				</div>
+				</a>
 			</section>
 			<section className="w-full p-8 lg:p-16  lg:min-h-[350px] bg-accentBlue text-blue grid place-items-center">
 				<div className="w-full md:w-4/5 flex flex-col md:flex-row items-center lg:max-w-[1000px]">
