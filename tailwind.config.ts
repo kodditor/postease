@@ -10,7 +10,8 @@ export default {
       },
       colors: {
         blue: '#0F172A',
-        paleBlue: '#0F172A15'
+        paleBlue: '#0F172A15',
+        accentBlue: '#F1F5F9'
       }
     },
   },
