@@ -5,28 +5,28 @@ import { Work_Sans as FontSans } from "next/font/google";
 import { TRPCReactProvider } from "~/trpc/react";
 import { cn } from "~/lib/utils";
 
-export const fontSans = FontSans({
-  weight: ['100','200', '300', '400', '700', '900'],
-  subsets: ['latin'],
-  variable: "--font-sans"
-})
+const fontSans = FontSans({
+    weight: ["100", "200", "300", "400", "700", "900"],
+    subsets: ["latin"],
+    variable: "--font-sans",
+});
 
 export const metadata = {
-  title: "PostEase CMS",
-  description: "The CMS for people who get things done.",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+    title: "PostEase CMS",
+    description: "The CMS for people who get things done.",
+    icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <body className={ cn("font-sans ", fontSans.variable )}>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body className={cn("font-sans ", fontSans.variable)}>
+                <TRPCReactProvider>{children}</TRPCReactProvider>
+            </body>
+        </html>
+    );
 }
