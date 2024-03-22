@@ -6,11 +6,15 @@ import SecondaryCTA from "./_components/ui/SecondaryCTA.component,";
 import { Button } from "./_components/ui/button";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenNib, faCalendar, faUserEdit, faCheck, faLayerGroup, faTools, faUserCog } from '@fortawesome/free-solid-svg-icons'
+import PricingTabs from "./_components/pricing/pricingTabs.component";
 
 //import { api } from "~/trpc/server";
 
 export default async function Home() {
-  return (
+
+	
+
+	return (
 		<>
 			<Header />
 			<main className="flex min-h-[calc(100vh-1rem-50px)] flex-col items-center text-blue">
@@ -76,6 +80,11 @@ export default async function Home() {
 							</li>
 						</ul>
 					</div>
+				</div>
+			</section>
+			<section className="w-full p-8 lg:p-16 lg:min-h-[350px] bg-paleBlue text-blue grid place-items-center">
+				<div className="w-full md:w-4/5 grid place-items-center lg:max-w-[1000px]">
+					<PricingTabs />
 				</div>
 			</section>
 			<SecondaryCTA />
