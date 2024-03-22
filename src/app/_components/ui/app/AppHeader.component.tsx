@@ -9,7 +9,7 @@ export default function AppHeader(){
 
     return (
         <>
-            <section className="h-[50px] flex justify-between items-center px-4 p-2 bg-paleBlue">
+            <section className="h-[50px] flex justify-between items-center px-4 p-2 bg-gray-100">
                 <Link href='/'>
                     <div className="h-[25px] w-[25px] relative">
                         <Image src={'/img/logo.png'} alt="PostEase Logo" fill />
