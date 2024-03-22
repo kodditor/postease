@@ -1,0 +1,19 @@
+import AppHeader from "../_components/ui/app/AppHeader.component"
+import AppMainView from "../_components/ui/app/AppMainView.component"
+import AppSidebar from "../_components/ui/app/AppSidebar.component"
+
+
+export default function MainApp(){
+
+    return(
+        <> 
+            <main className="bg-paleBlue w-screen h-screen overflow-hidden">
+                <AppHeader />
+                <section className="h-[calc(100vh-50px)] flex bg-blue">
+                    <AppSidebar />
+                    <AppMainView />
+                </section>
+            </main>
+        </>
+    )
+}
