@@ -25,6 +25,8 @@ const config = {
         blue: '#0F172A',
         primary:'#0F172A',
         'primary-foreground': 'white',
+        secondary: 'white',
+        'secondary-foreground': '#0F172A',
         paleBlue: '#0F172A15',
         accentBlue: '#F1F5F9'
       },
