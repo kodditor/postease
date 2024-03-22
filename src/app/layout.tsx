@@ -14,7 +14,7 @@ const fontSans = FontSans({
 export const metadata = {
     title: "PostEase CMS",
     description: "The CMS for people who get things done.",
-    icons: [{ rel: "icon", url: "/favicon.ico" }],
+    icons: [{ rel: "icon", url: "/img/favicon.ico" }],
 };
 
 export default function RootLayout({
