@@ -1,5 +1,5 @@
 import { env } from "../env.js";
-import { Paddle, Price, Product} from "@paddle/paddle-node-sdk";
+import { Paddle} from "@paddle/paddle-node-sdk";
 
 const paddle = new Paddle(env.PADDLE_API_KEY);
 

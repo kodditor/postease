@@ -1,5 +1,5 @@
 'use client'
-import { Product } from "@paddle/paddle-node-sdk";
+import type { Product } from "@paddle/paddle-node-sdk";
 import { useEffect, useState } from "react";
 import { env } from "~/env";
 
@@ -8,7 +8,10 @@ export default function usePlans(){
     useEffect(() => {
         fetch(`${env.NEXT_PUBLIC_BASE_URL}/api/paddle/plans`)
         .then( res => res.json())
-        .then((data) => setPlans(data))
+        .then((data: Product[] ) => setPlans(data))
+        .catch((e) => {
+            console.log(e)
+        })
     }, [])
     return plans
 }

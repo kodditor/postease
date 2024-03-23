@@ -1,4 +1,4 @@
-import { VFile } from 'node_modules/remark-rehype/lib'
+import type { VFile } from 'node_modules/remark-rehype/lib'
 import rehypeSanitize from 'rehype-sanitize'
 import rehypeStringify, {}  from 'rehype-stringify'
 import remarkParse from 'remark-parse'
@@ -52,6 +52,9 @@ function LivePreview({postTitle, postBodyDebounced}: {postTitle: string, postBod
     useEffect(() => {
         parseMD(postBodyDebounced).then((data) =>{
             setPostBodyHtml(data.value)
+        })
+        .catch((e) =>{
+            console.log(e)
         })
     }, [postBodyDebounced])
 

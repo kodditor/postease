@@ -1,5 +1,5 @@
 'use client'
-import { Price } from "@paddle/paddle-node-sdk";
+import type { Price } from "@paddle/paddle-node-sdk";
 import { useEffect, useState } from "react";
 import { env } from "~/env";
 
@@ -8,7 +8,10 @@ export default function usePrices(){
     useEffect(() => {
         fetch(`${env.NEXT_PUBLIC_BASE_URL}/api/paddle/prices`)
         .then( res => res.json())
-        .then((data) => setPrices(data))
+        .then((data: Price[]) => setPrices(data))
+        .catch((e) => {
+            console.log(e)
+        })
     }, [])
     return prices
 }
@@ -30,11 +33,11 @@ export function usePricingJokes(){
         },
         // got a joke for the pricing page? add it here.
     ]
-    let initialIndex = Math.floor(Math.random() * (jokes.length) ) 
+    const initialIndex = Math.floor(Math.random() * (jokes.length) ) 
     const [joke, setJoke] = useState<joke>(jokes[initialIndex]!)
     
     function toggleJoke(){
-        let randIndex = Math.floor(Math.random() * (jokes.length) ) 
+        const randIndex = Math.floor(Math.random() * (jokes.length) ) 
         setJoke(jokes[randIndex]!)
     }
 

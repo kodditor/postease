@@ -1,6 +1,6 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import AppEditorModule from "./editor/AppEditor.component";
 
 export default function AppMainView() {

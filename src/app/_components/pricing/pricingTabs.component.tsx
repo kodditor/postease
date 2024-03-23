@@ -40,8 +40,8 @@ export default function PricingTabs(){
                         const priceMonthly = prices.filter(p => p.billingCycle!.interval == 'month').find(a => a.productId == plan.id)
 
                         return (
-                            //@ts-ignore
-                            <div className={`w-full md:w-fit shadow ${ plan.customData!['recommended'] == 1 ? 'bg-blue text-white shadow-xl': 'bg-white text-blue'} border-2 border-blue  p-8 rounded-xl  hover:shadow-md `} key={idx}>
+                            //@ts-expect-error the recommended attribute it not typesafe 
+                            <div className={`w-full md:w-fit shadow ${ plan.customData!.recommended == 1 ? 'bg-blue text-white shadow-xl': 'bg-white text-blue'} border-2 border-blue  p-8 rounded-xl  hover:shadow-md `} key={idx}>
                                 <div className="mb-4 flex  md:flex-col justify-between md:justify-normal">
                                     <h4 className="text-xl font-semibold">{plan.name}</h4>
                                     <h2 className="text-2xl">
@@ -54,8 +54,8 @@ export default function PricingTabs(){
                                     </h2>
                                 </div>
                                 <a className="w-full block mb-4" href="https://getwaitlist.com/waitlist/14764">
-                                    {/* @ts-ignore */}
-                                    <Button className="w-full" variant={plan.customData!['recommended'] == 1 ? 'secondary': 'default'}>Join Waitlist</Button>
+                                    {/* @ts-expect-error This */}
+                                    <Button className="w-full" variant={plan.customData!.recommended == 1 ? 'secondary': 'default'}>Join Waitlist</Button>
                                 </a>
                                 <div className="flex flex-col gap-2">
                                     {
@@ -90,7 +90,6 @@ export default function PricingTabs(){
                                 </h2>
                             </div>
                             <a className="w-full block mb-4" href="https://getwaitlist.com/waitlist/14764">
-                                {/* @ts-ignore */}
                                 <Button className="w-full" variant={'default'}>Join Waitlist</Button>
                             </a>
                             <div className="flex flex-col gap-2">
