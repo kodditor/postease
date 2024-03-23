@@ -74,8 +74,46 @@ export default function PricingTabs(){
                             </div>
                         )
                     })
-                    
+                
                 }
+                    <>
+                        <div className={`w-full md:w-fit shadow bg-white text-blue border-2 border-blue  p-8 rounded-xl  hover:shadow-md `} >
+                            <div className="mb-4 flex  md:flex-col justify-between md:justify-normal">
+                                <h4 className="text-xl font-semibold">Free Plan</h4>
+                                <h2 className="text-2xl">
+                                {	billingPeriod == 'year' 
+                                    ?
+                                    '$0.00/year'
+                                    : 
+                                    '$0.00/month'
+                                }
+                                </h2>
+                            </div>
+                            <a className="w-full block mb-4" href="https://getwaitlist.com/waitlist/14764">
+                                {/* @ts-ignore */}
+                                <Button className="w-full" variant={'default'}>Join Waitlist</Button>
+                            </a>
+                            <div className="flex flex-col gap-2">
+                                {
+                                    [
+                                        '25 Posts',
+                                        'Up to 30 Gallery images',
+                                        'Up to 2 seats',
+                                        'Cheaper than a cup of coffee'
+                                    ].map((feat, idx) => {
+                                        if(feat != ''){
+                                            return(
+                                                <div className="flex items-center gap-3" key={idx}>
+                                                    <FontAwesomeIcon icon={faCheck} height={12} />
+                                                    <p>{feat}</p>    
+                                                </div>
+                                            )
+                                        }
+                                    })
+                                }
+                            </div>
+                        </div>
+                    </>
             </div>
             <small className="text-slate-500 max-w-[500px] text-center cursor-pointer" onClick={toggleJoke}>{joke.q}<br/>{joke.a}</small>
         </>
