@@ -1,54 +1,38 @@
-'use client'
-import { useSearchParams } from "next/navigation"
-import { ReactNode } from "react"
-import AppEditorModule from "./editor/AppEditor.component"
+"use client";
+import { useSearchParams } from "next/navigation";
+import { ReactNode } from "react";
+import AppEditorModule from "./editor/AppEditor.component";
 
-export default function AppMainView(){
-    const searchParams = useSearchParams()
-    const tab = searchParams.get('tab')
-    console.log(tab)
+export default function AppMainView() {
+    const searchParams = useSearchParams();
+    const tab = searchParams.get("tab");
+
     switch (tab) {
-        case 'editor':
+        case "editor":
             return (
                 <MainWrapper>
                     <AppEditorModule />
                 </MainWrapper>
-            )
-            break;
-        
-        case 'dev':
-            return (
-                <MainWrapper>
+            );
 
-                </MainWrapper>
-            )
-            break;
-        
-        case 'settings':
-            return (
-                <MainWrapper>
+        case "dev":
+            return <MainWrapper>Hello</MainWrapper>;
 
-                </MainWrapper>
-            )
-            break;
-        
+        case "settings":
+            return <MainWrapper>Hello</MainWrapper>;
+
         default:
-            return (
-                <MainWrapper>
-
-                </MainWrapper>
-            )
-
-            break;
+            return <MainWrapper>Hello</MainWrapper>;
     }
 }
 
-function MainWrapper({children} : {children: ReactNode}){
+function MainWrapper({ children }: { children: ReactNode }) {
     return (
         <>
-            <section className="w-[calc(100vw-50px-0.5rem)] mt-2 h-[calc(100vh-1rem-50px)] shadow bg-white rounded-lg p-4">
-            {children}
+            <section className="mt-2 h-[calc(100vh-1rem-50px)] w-[calc(100vw-50px-0.5rem)] rounded-lg bg-gray-100 p-4 shadow">
+                {children}
             </section>
         </>
-    )
+    );
 }
+
