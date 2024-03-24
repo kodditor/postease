@@ -11,7 +11,7 @@ export const env = createEnv({
         TURSO_AUTH_TOKEN: z.string(),
         TURSO_CONNECTION_URL: z.string(),
         PADDLE_API_KEY: z.string(),
-        
+        CLERK_SECRET_KEY: z.string()
     },
 
     /**
@@ -21,6 +21,7 @@ export const env = createEnv({
      */
     client: {
         NEXT_PUBLIC_BASE_URL: z.string(),
+        NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string()
     },
 
     /**
@@ -32,7 +33,9 @@ export const env = createEnv({
         TURSO_AUTH_TOKEN: process.env.TURSO_AUTH_TOKEN,
         TURSO_CONNECTION_URL: process.env.TURSO_CONNECTION_URL,
         PADDLE_API_KEY: process.env.PADDLE_API_KEY,
-        NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL
+        CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,
+        NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
+        NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
         // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
     },
     /**
