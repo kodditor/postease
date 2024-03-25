@@ -25,7 +25,7 @@ export default function PricingTabs(){
     return (
         <>
             <h2 className="mb-2 text-center text-2xl font-bold sm:text-3xl lg:w-[500px] lg:text-4xl">Pricing</h2>
-            <h3 className="text-md mb-3">Focus on delivering value, not the bill.</h3>
+            <h3 className="text-md mb-3 text-center" >Focus on delivering value, not the bill.</h3>
             <div className="flex flex-col gap-1 items-center mb-4">
                 <h3 className="text-xs">Billing Period</h3>
                 <div className="flex gap-1 bg-white p-1 rounded-full">
@@ -33,7 +33,7 @@ export default function PricingTabs(){
                     <div className={`w-20 text-sm duration-150 text-center py-1 cursor-pointer rounded-full ${(billingPeriod == 'year' ) ? 'bg-gray-100, text-blue hover:bg-gray-200' : 'bg-blue text-white hover:bg-slate-800'}`} onClick={()=>{ billingPeriod == 'year' ? toggleBilling() : null }}>Monthly</div>
                 </div>
             </div>
-            <div className="w-full md:w-fit flex flex-col md:flex-row-reverse gap-4 mb-8">
+            <div className="w-full md:w-fit flex flex-col-reverse lg:flex-row-reverse gap-4 mb-8">
                 { 
                     plans.map((plan , idx) => {
                         const priceYearly = prices.filter(p => p.billingCycle!.interval == 'year').find(a => a.productId == plan.id)
@@ -41,8 +41,8 @@ export default function PricingTabs(){
 
                         return (
                             //@ts-expect-error the recommended attribute it not typesafe 
-                            <div className={`w-full md:w-fit shadow ${ plan.customData!.recommended == 1 ? 'bg-blue text-white shadow-xl': 'bg-white text-blue'} border-2 border-blue  p-8 rounded-xl  hover:shadow-md `} key={idx}>
-                                <div className="mb-4 flex  md:flex-col justify-between md:justify-normal">
+                            <div className={`w-full lg:w-1/3 shadow ${ plan.customData!.recommended == 1 ? 'bg-blue text-white shadow-xl': 'bg-white text-blue'} border-2 border-blue  p-8 rounded-xl  hover:shadow-md `} key={idx}>
+                                <div className="mb-4 flex items-center  md:flex-col justify-between md:justify-normal">
                                     <h4 className="text-xl font-semibold">{plan.name}</h4>
                                     <h2 className="text-2xl">
                                     {	billingPeriod == 'year' 
@@ -77,15 +77,15 @@ export default function PricingTabs(){
                 
                 }
                     <>
-                        <div className={`w-full md:w-fit shadow bg-white text-blue border-2 border-blue  p-8 rounded-xl  hover:shadow-md `} >
-                            <div className="mb-4 flex  md:flex-col justify-between md:justify-normal">
+                        <div className={`w-full lg:w-1/3 shadow bg-white text-blue border-2 border-blue  p-8 rounded-xl  hover:shadow-md `} >
+                            <div className="mb-4 flex items-center  md:flex-col justify-between md:justify-normal">
                                 <h4 className="text-xl font-semibold">Free Plan</h4>
                                 <h2 className="text-2xl">
                                 {	billingPeriod == 'year' 
                                     ?
-                                    '$0.00/year'
+                                    '$0/year'
                                     : 
-                                    '$0.00/month'
+                                    '$0/month'
                                 }
                                 </h2>
                             </div>

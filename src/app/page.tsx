@@ -12,12 +12,10 @@ import PricingTabs from "./_components/pricing/pricingTabs.component";
 
 export default async function Home() {
 
-	
-
 	return (
 		<>
 			<Header />
-			<main className="flex min-h-[calc(100vh-1rem-50px)] flex-col items-center text-blue">
+			<main className="flex scroll-smooth min-h-[calc(100vh-1rem-50px)] flex-col items-center text-blue">
 			<section className="flex flex-col gap-3 pt-20 px-8 pb-16 items-center">
 				<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl lg:max-w-[60rem] mb-4 lg:mb-6 leading-snug sm:leading-normal md:leading-normal lg:leading-normal text-blue font-semibold text-center">The CMS for people who <span className="bg-accentBlue text-nowrap rounded-lg pb-2 pt-1 border-2 border-paleBlue px-4">get things done.</span></h1>
 				<h4 className=" text-xl md:text-2xl text-center font-medium mb-4">Skip the fluff, focus on the content</h4>
@@ -25,7 +23,7 @@ export default async function Home() {
 					<Button>Join the waitlist</Button>
 				</a>
 			</section>
-			<section className="w-full p-8 lg:p-16  lg:min-h-[350px] bg-accentBlue text-blue grid place-items-center">
+			<section id='curators' className="w-full p-8 lg:p-16  lg:min-h-[350px] bg-accentBlue text-blue grid place-items-center">
 				<div className="w-full md:w-4/5 flex flex-col md:flex-row items-center lg:max-w-[1000px]">
 					<div className="w-full md:w-1/2 flex flex-col lg:flex-row items-center justify-center md:justify-end gap-4 lg:gap-8 md:pr-16">
 						<div  className="flex gap-4" >
@@ -54,7 +52,7 @@ export default async function Home() {
 				</div>
 			</section>
 			
-			<section className="w-full p-8 lg:p-16 lg:min-h-[350px] bg-blue text-white grid place-items-center">
+			<section id='devs' className="w-full p-8 lg:p-16 lg:min-h-[350px] bg-blue text-white grid place-items-center">
 				<div className="w-full md:w-4/5 flex flex-col md:flex-row items-center lg:max-w-[1000px]">
 					<div className="w-full md:w-1/2 flex flex-col lg:flex-row justify-center items-center md:justify-end gap-4 lg:gap-8 md:pr-16">
 						<div className="flex gap-4" >
@@ -82,7 +80,7 @@ export default async function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="w-full p-8 lg:p-16 lg:min-h-[350px] bg-paleBlue text-blue grid place-items-center">
+			<section id='pricing' className="w-full p-8 lg:p-16 lg:min-h-[350px] bg-paleBlue text-blue grid place-items-center">
 				<div className="w-full md:w-4/5 grid place-items-center lg:max-w-[1000px]">
 					<PricingTabs />
 				</div>
